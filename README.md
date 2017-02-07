@@ -8,6 +8,21 @@ there are 3 parts of logstash
  - [filter](https://www.elastic.co/guide/en/logstash/current/filter-plugins.html)
  - [output](https://www.elastic.co/guide/en/logstash/current/output-plugins.html)
  
-### filter grok tools
- [grok match online check](http://grokconstructor.appspot.com/do/match)
- [grok Pattern](https://github.com/elastic/logstash/blob/v1.4.2/patterns/grok-patterns)
+### filter::grok tools
+  [grok match online check](http://grokconstructor.appspot.com/do/match)
+  [grok Pattern](https://github.com/elastic/logstash/blob/v1.4.2/patterns/grok-patterns)
+
+## Sample
+```Shell
+input {
+  ...
+}
+
+filter {
+  ...
+}
+
+output {
+  ...
+}
+```
