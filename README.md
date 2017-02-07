@@ -1,6 +1,6 @@
 # logstash.conf
 ## version
-Logstash 2.2.0 All Plugins(https://www.elastic.co/downloads/past-releases/logstash-2-2-0-all-plugins)
+[Logstash 2.2.0 All Plugins](https://www.elastic.co/downloads/past-releases/logstash-2-2-0-all-plugins)
 
 ## reference
 there are 3 parts of logstash
