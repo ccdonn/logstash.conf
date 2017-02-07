@@ -12,6 +12,30 @@ there are 3 parts of logstash
   [grok match online check](http://grokconstructor.appspot.com/do/match) <br/>
   [grok Pattern](https://github.com/elastic/logstash/blob/v1.4.2/patterns/grok-patterns) <br/>
 ### filter::grok concept
+#### Given Filter
+```Shell
+    grok {
+      match => { "message" => "%{DATESTAMP:timestamp} %{LOGLEVEL:level} %{NOTSPACE:marker} %{NOTSPACE:method} %{NOTSPACE:message}" }
+      remove_field => [ "marker" ]
+      add_tag => [ "master" ]
+    }
+    date {
+      match => [ "timestamp", "yy-MM-dd HH:mm:ss.SSS" ]
+      remove_field => [ "timestamp" ]
+    }
+```
+#### input
+```Shell
+   2017-02-06 07:16:55.392 INFO ANA GET /feed/category
+```
+#### output
+```Shell
+   {
+     "level": "INFO",
+     "method": "GET",
+     "message": "/feed/category"
+   }
+```
 
 ## Sample
 ```Shell
